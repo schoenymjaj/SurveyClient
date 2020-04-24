@@ -2,14 +2,14 @@ sudo: required
 services:
     - docker
 script:
-    - docker build -t mnsbutterfly/node .
-    - docker images mnsbutterfly/node
+    - docker build -t mnsbutterfly/risc .
+    - docker images mnsbutterfly/risc
 
 before_deploy:
     - docker login --username mnsbutterfly --password inthemiddle#11
 
 deploy:
     provider: script
-    script: docker push mnsbutterfly/node
+    script: docker push mnsbutterfly/risc
     on:
         branch: master
