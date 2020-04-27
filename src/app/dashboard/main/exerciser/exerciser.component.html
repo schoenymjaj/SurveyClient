@@ -109,13 +109,14 @@
         <button mat-raised-button color="primary" (click)="performRestAPICall()">SEND</button>
     </mat-card-actions>
     <p>
-        httpForm.value:{{httpForm.value | json}}<br/>
-        urlFormControl.invalid:{{urlString.invalid}}<br/>
-        urlFormControl.touched:{{urlString.touched}}<br/>
-        urlTag.className{{urlTag.className}}<br/>
-        urlChoiceFormControl.invalid:{{httpForm.get('urlChoiceFormControl').invalid}}<br/>
-        urlString.errors?.urlInvalid: {{urlString.errors?.urlInvalid | json}}<br/>
-        urlString.errors?.minlength: {{urlString.errors?.minlength | json}}<br/>
+        <span style="font-weight: bolder;">Response:</span> {{jsonResponse | json}}<br/>
+        <span style="font-weight: bolder;">httpForm.value:</span> {{httpForm.value | json}}<br/>
+        <span style="font-weight: bolder;">urlFormControl.invalid:</span> {{urlString.invalid}}<br/>
+        <span style="font-weight: bolder;">urlFormControl.touched:</span> {{urlString.touched}}<br/>
+        <span style="font-weight: bolder;">urlTag.className:</span> {{urlTag.className}}<br/>
+        <span style="font-weight: bolder;">urlChoiceFormControl.invalid:</span> {{httpForm.get('urlChoiceFormControl').invalid}}<br/>
+        <span style="font-weight: bolder;">urlString.errors?.urlInvalid:</span> {{urlString.errors?.urlInvalid | json}}<br/>
+        <span style="font-weight: bolder;">urlString.errors?.minlength:</span> {{urlString.errors?.minlength | json}}<br/>
         <!--additionalContent:{{additionalContent.controls | json}}-->
     </p>
 </mat-card>

@@ -464,6 +464,13 @@
                                 "icon": "jstree-folder"
                             }
                         ]
+                    },
+                    {
+                        "text": "Exerciser",
+                        "state": {
+                            "selected": false
+                        },
+                        "icon": "jstree-file"
                     }
                 ]
             }

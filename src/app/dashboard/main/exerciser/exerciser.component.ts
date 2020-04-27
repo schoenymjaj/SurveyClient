@@ -183,9 +183,7 @@ export class ExerciserComponent implements OnInit {
       url = this.httpForm.controls.urlFormControl.value + (this.httpForm.controls.mlportFormControl.value != ''?  '&mlport=' + this.httpForm.controls.mlportFormControl.value: '')
     }
 
-
     this.jsonResponse = {}; //initialize before API call
-
 
     let httpArgs = new HttpArgs(this.httpForm.controls.protocolFormControl.value,
                                 this.httpForm.controls.authTypeFormControl.value,
@@ -206,9 +204,7 @@ export class ExerciserComponent implements OnInit {
                   }
                 );
 
-
-
-    };
+    }; //performRestAPICall() {
 
     openSnackBar(message) {
       const snackBarRef = this.snackBar.open(message,'OK', {
@@ -225,6 +221,15 @@ export class ExerciserComponent implements OnInit {
       this.httpForm.controls.urlFormControl.setValue(event.option.value);
       this.httpForm.controls.urlChoiceFormControl.setValue([event.option.value]);
       //this.httpForm.controls.urlChoiceFormControl.setValue([]);
+
+      switch (event.option.value) {
+        case this.ApiUrls[2]:
+            this.httpForm.controls.protocolFormControl.setValue(this.protocols[1]);
+          break;
+        default:
+            this.httpForm.controls.protocolFormControl.setValue(this.protocols[0]);
+          break;
+      }
 
     }
 
