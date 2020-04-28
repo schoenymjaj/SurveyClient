@@ -1,6 +1,9 @@
 pipeline {
 
     agent any
+    environment {
+        NEW_VERSION = '1.3.0'
+    }
 
     stages {
 
@@ -8,6 +11,7 @@ pipeline {
 
             steps {
                 echo 'building the risc client...'
+                echo "bulding version ${NEW_VERSION}"
 
             }
 
@@ -30,7 +34,15 @@ pipeline {
             }
 
         }
+    }
+    post {
+        always {
+            echo 'do something after the pipleine has completed'
 
+        }
+        failure {
+            echo 'do  something after the pipleline has failed'
 
+        }
     }
 }
