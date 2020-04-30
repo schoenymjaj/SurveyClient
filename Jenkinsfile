@@ -3,6 +3,7 @@ pipeline {
     agent any
     environment {
         NEW_VERSION = '1.0.0'
+        AWS_CREDENTIALS = credentials('aws-ecr')
     }
 
     stages {
@@ -41,7 +42,7 @@ pipeline {
                 echo 'archiving the risc client image...'
 
                 script {
-                    docker.withRegistry('927605762295.dkr.ecr.us-east-1.amazonaws.com/risc','aws-ecr') {
+                    docker.withRegistry('927605762295.dkr.ecr.us-east-1.amazonaws.com/risc',"${AWS_CREDENTIALS}") {
                         app.push("${env.BUILD_NUMBER}")
                         app.push("latest");
                     }
