@@ -13,7 +13,9 @@ pipeline {
                 echo 'building the risc client...'
                 echo "bulding version ${NEW_VERSION}"
 
-                app = docker.build("mnsbutterfly/risc")
+                script {
+                    app = docker.build("mnsbutterfly/risc")
+                }
 
             }
 
@@ -23,8 +25,10 @@ pipeline {
 
             steps {
 
-                app.inside {
-                    echo 'testing the risc client...passed!'
+                script {
+                    app.inside {
+                        echo 'testing the risc client...passed!'
+                    }
                 }
                 
             }
@@ -36,9 +40,11 @@ pipeline {
             steps {
                 echo 'deploying the risc client...'
 
-                docker.withRegistry('https://registry.hub.docker.com','docker-hub') {
-                    app.push("${env.BUILD_NUMBER}")
-                    app.push("latest");
+                script {
+                    docker.withRegistry('https://registry.hub.docker.com','docker-hub') {
+                        app.push("${env.BUILD_NUMBER}")
+                        app.push("latest");
+                    }
                 }
                 
             }
