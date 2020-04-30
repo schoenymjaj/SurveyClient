@@ -2,8 +2,7 @@ pipeline {
 
     agent any
     environment {
-        NEW_VERSION = '1.3.0'
-        ECR_CREDENTIALS = credentials('AWS ECR')
+        NEW_VERSION = '1.0.0'
     }
 
     stages {
@@ -14,6 +13,8 @@ pipeline {
                 echo 'building the risc client...'
                 echo "bulding version ${NEW_VERSION}"
 
+                app = docker.build("mnsbutterfly/risc")
+
             }
 
         }
@@ -21,7 +22,10 @@ pipeline {
        stage("test") {
 
             steps {
-                echo 'testing the risc client...'
+
+                app.inside {
+                    echo 'testing the risc client...passed!'
+                }
                 
             }
 
@@ -31,7 +35,11 @@ pipeline {
 
             steps {
                 echo 'deploying the risc client...'
-                echo "deploying with ${ECR_CREDENTIALS}"
+
+                docker.withRegistry('https://registry.hub.docker.com','docker-hub') {
+                    app.push("${env.BUILD_NUMBER}")
+                    app.push("latest");
+                }
                 
             }
 
