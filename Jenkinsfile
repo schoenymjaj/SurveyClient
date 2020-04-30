@@ -3,7 +3,7 @@ pipeline {
     agent any
     environment {
         NEW_VERSION = '1.0.0'
-        AWS_CREDENTIALS = credentials('aws-ecr')
+        AWS_CREDENTIALS = credentials('docker-hub')
     }
 
     stages {
