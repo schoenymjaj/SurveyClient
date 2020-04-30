@@ -42,7 +42,7 @@ pipeline {
                 echo 'archiving the risc client image...'
 
                 script {
-                    docker.withRegistry('927605762295.dkr.ecr.us-east-1.amazonaws.com/risc',AWS_CREDENTIALS) {
+                    docker.withRegistry('https://registry.hub.docker.com',AWS_CREDENTIALS) {
                         app.push("${env.BUILD_NUMBER}")
                         app.push("latest");
                     }
