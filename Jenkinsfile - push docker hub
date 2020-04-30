@@ -35,13 +35,13 @@ pipeline {
 
         }
 
-       stage("push") {
+       stage("deploy") {
 
             steps {
-                echo 'archiving the risc client image...'
+                echo 'deploying the risc client...'
 
                 script {
-                    docker.withRegistry('927605762295.dkr.ecr.us-east-1.amazonaws.com/risc','aws-ecr') {
+                    docker.withRegistry('https://registry.hub.docker.com','docker-hub') {
                         app.push("${env.BUILD_NUMBER}")
                         app.push("latest");
                     }
