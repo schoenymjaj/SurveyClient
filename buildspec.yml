@@ -8,10 +8,11 @@ phases:
         finally:
             - echo Executing Install Finally
     pre_build:
-        - $(aws ecr get-login --no-include-email --region us-east-1)
-        - REPOSITORY_URI=XXXXXXXXXX.dkr.ecr.us-east-1.amazonaws.com/devopswebbuild
-        - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
-        - IMAGE_TAG=${COMMIT_HASH:=latest}   
+        commands:
+            - $(aws ecr get-login --no-include-email --region us-east-1)
+            - REPOSITORY_URI=XXXXXXXXXX.dkr.ecr.us-east-1.amazonaws.com/devopswebbuild
+            - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+            - IMAGE_TAG=${COMMIT_HASH:=latest}   
     build:
         commands:
             - echo Executing Build Phase
