@@ -15,7 +15,7 @@ phases:
     build:
         commands:
             - echo Executing Build Phase
-            - npm build
+            - npm run build
         finally:
             - echo Executing Build Finally
     post_build:
