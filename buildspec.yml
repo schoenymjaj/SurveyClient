@@ -3,19 +3,20 @@ version: 0.2
 phases:
     install:
         commands:
-            - echo Executing Install Phase
+            - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --storage-driver=overlay2&
+            - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"
         finally:
             - echo Executing Install Finally
     pre_build:
         commands:
             - echo Executing Pre Build Phase
-            - npm install
+            - docker build -t risc-client .
         finally:
             - echo Executing Pre Build Finally    
     build:
         commands:
             - echo Executing Build Phase
-            - npm run build
+            - docker images
         finally:
             - echo Executing Build Finally
     post_build:
