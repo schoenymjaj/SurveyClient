@@ -25,13 +25,16 @@ import { JstreeComponent } from './main/jstree/jstree.component';
 
 import { SearchBarComponent } from './main/assessment-library/search-bar/search-bar.component';
 import { SearchPageComponent } from './main/assessment-library/search-page/search-page.component';
+import { KendoTestComponent } from './main/kendo-test/kendo-test.component';
+import { KendoUIModule } from '../kendoui-module'
 
+import { AssessLibKendoComponent } from './main/assessment-library-kendo/assessment-library-kendo.component';
 
 @NgModule({
   declarations: [MainComponent, CirdsDashboardComponent, CirdsPiechartComponent, 
                 ExerciserComponent, DatasourceCountsComponent, IntegrityCheckComponent, RtsDocsPiechartComponent,
                 RiscCandy1PiechartComponent, RiscCandy2PiechartComponent, IngestStatusComponent, SurveyComponent,
-                JstreeComponent, SearchBarComponent, SearchPageComponent],
+                JstreeComponent, SearchBarComponent, SearchPageComponent, KendoTestComponent, AssessLibKendoComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
@@ -39,7 +42,8 @@ import { SearchPageComponent } from './main/assessment-library/search-page/searc
     ChartsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    KendoUIModule
   ],
   providers: [DecimalPipe]
 })

@@ -45,7 +45,7 @@
   <mat-list-option *ngFor = "let assessment of Assessment">
     <table>
       <tr>
-        <td width="450">{{assessment.title}}</td>
+        <td width="450">{{assessment.name}}</td>
         <td width="150">{{assessment.category}}</td>
         <td>{{assessment.type}}</td>
         <td style="text-align: right;"><button mat-raised-button color="primary" (click)="previewAssessment(assessment.id)">Preview</button></td>
@@ -63,7 +63,7 @@
 <!--
 <div *ngFor = "let assessment of Assessment" class="group">
   <p><b>Item :</b>{{assessment.id}}</p>
-  <p><b>Title :</b> {{assessment.title}}</p>
+  <p><b>Title :</b> {{assessment.name}}</p>
   <p><b>Category: </b>{{assessment.category}}</p>
   <p><b>Type: </b>{{assessment.type}}</p>
   <p><b>Tags: </b>{{assessment.tags}}</p>

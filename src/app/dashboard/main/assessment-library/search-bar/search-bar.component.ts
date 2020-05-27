@@ -24,7 +24,7 @@ export class SearchBarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.dataService.getassessment().subscribe(assessment => {
+    this.dataService.getassessment("../assets/data/assessment-library-kendo/assessment-library.json").subscribe(assessment => {
       this.allassessment = assessment
 
     });
@@ -47,12 +47,12 @@ export class SearchBarComponent implements OnInit {
     if (val === '' || val === null) {
       return [];
     }
-    return val ? this.allassessment.filter(s => s.title.toLowerCase().indexOf(val.toLowerCase()) != -1)
+    return val ? this.allassessment.filter(s => s.name.toLowerCase().indexOf(val.toLowerCase()) != -1)
       : this.allassessment;
   }
 
   displayFn(Assessment: Assessment) {
-    let k = Assessment ? Assessment.title : Assessment;
+    let k = Assessment ? Assessment.name : Assessment;
     return k;
   }
 

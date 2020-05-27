@@ -3,15 +3,15 @@
   <mat-chip-list #chipList>
     <mat-chip style="margin-top:0.4em;" *ngFor="let option of  this.dataService.searchOption" (removed)="removeOption(option)">
 
-      <span>{{option.title}}</span>
+      <span>{{option.name}}</span>
       
       <mat-icon matChipRemove>cancel</mat-icon>
     </mat-chip>
-    <input class="mat-placeholder-class" #autocompleteInput type="text" placeholder="Search by Title" aria-label="Number" matInput [formControl]="myControl"
+    <input class="mat-placeholder-class" #autocompleteInput type="text" placeholder="Search by Name" aria-label="Number" matInput [formControl]="myControl"
       [matAutocomplete]="auto" [matChipInputFor]="chipList">
     <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
       <mat-option *ngFor="let option of autoCompleteList" [value]="option" (onSelectionChange)="filterPostList($event)">
-        {{option.title}}
+        {{option.name}}
       </mat-option>
     </mat-autocomplete>
   </mat-chip-list>

@@ -58,6 +58,11 @@ export class CirdsNavComponent implements OnInit {
     //this.initialTree("/assets/data/jstreeLibrary/assessment-lib-jstree-value.json", this.initialSelectTreeView);
   } //viewAssessmentLibrary() {
 
+viewKendoAssessmentLibrary() {
+  //this.router.navigate(['/dashboard/kendo-test']);
+  this.router.navigate(['/dashboard/assessment-library-kendo']);
+}
+
   viewDashboard() {
     this.router.navigate(['/dashboard/main']);
   }

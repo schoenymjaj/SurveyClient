@@ -1,0 +1,97 @@
+<!--
+<p>assessment-library-kendo works!</p>
+<div *ngFor = "let assessment of anotherAssessments">
+    {{assessment.name}}
+</div>
+-->
+<div id="grid-test">
+    <h1>RISC Assessment Library</h1>
+    <kendo-grid #grid [kendoGridBinding]="gridData" [height]="800" [groupable]="true" [group]=""
+        [selectable]="selectableSettings" [sortable]="{
+        allowUnsort: true,
+        mode: 'multiple'
+    }" [sort]="sort" [pageable]="
+    {
+        buttonCount:3,
+        pageSizes: [5,10,20]
+    }" kendoGridSelectBy="id" [selectedKeys]="mySelection" [pageSize]="10" [filter]="state.filter"
+        [columnMenu]="{ filter: true }" (cellClick)="onCellClick($event)">
+
+        <ng-template kendoGridToolbarTemplate [position]="position">
+
+            <kendo-buttongroup style="width: 50%;background-color: white;" [width]="100" [look]="'outline'">
+                <button kendoButton [selected]="true" (click)="onModuleClick($event)"
+                    [toggleable]="true">Hazard</button>
+                <button kendoButton (click)="onModuleClick($event)" [toggleable]="true">Vulnerability</button>
+                <button kendoButton (click)="onModuleClick($event)" [toggleable]="true">Consequence</button>
+            </kendo-buttongroup>
+        </ng-template>
+
+        <kendo-grid-checkbox-column [headerStyle]="gridHeaderStyle" [showSelectAll]="true" [width]="30"
+            [style]="cellStyle" [footerStyle]="footerStyle"></kendo-grid-checkbox-column>
+
+        <kendo-grid-column [headerStyle]="gridHeaderStyle" class="grid-symbol-col" field="name" title="Name"
+            [width]="80">
+        </kendo-grid-column>
+
+        <kendo-grid-column [headerStyle]="gridHeaderStyle" title="Image" [width]="50" [columnMenu]="false">
+            <ng-template kendoGridHeaderTemplate let-dataItem>
+                Image
+            </ng-template>
+            <ng-template kendoGridCellTemplate let-dataItem let-index>
+                <img src="../../../../assets/img/{{dataItem.type}}-icon.png" width="55" height="49" />
+            </ng-template>
+        </kendo-grid-column>
+
+        <kendo-grid-column [headerStyle]="gridHeaderStyle" field="type" title="Type" [width]="80"></kendo-grid-column>
+        <!---
+    <kendo-grid-column field="typeOrder" title="Type" [width]="100">
+        <ng-template kendoGridCellTemplate let-dataItem let-index>
+            {{dataItem.type}}
+        </ng-template>
+    </kendo-grid-column>
+    -->
+        <kendo-grid-column [headerStyle]="gridHeaderStyle" field="description" title="Description" [width]="200">
+        </kendo-grid-column>
+
+        <kendo-grid-column [headerStyle]="gridHeaderStyle" class="price-col" field="preview" title="Preview"
+            [columnMenu]="false" [width]="80">
+            <ng-template kendoGridHeaderTemplate let-dataItem>
+                Preview
+            </ng-template>
+            <ng-template kendoGridCellTemplate let-dataItem let-index>
+                <button kendoButton (click)="onPreviewClick(dataItem, index)" [primary]="true">Preview</button>
+            </ng-template>
+        </kendo-grid-column>
+
+        <ng-template kendoGridDetailTemplate let-dataItem let-rowIndex="rowIndex">
+            <table>
+                <tr>
+                    <td style="font-weight: bold;width:130px">Description:</td>
+                    <td>{{dataItem.description}}</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;width:130px">Active:</td>
+                    <td>{{dataItem.active}}</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;width:130px">Description:</td>
+                    <td> {{dataItem.description}}</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;width:130px">Tags:</td>
+                    <td>{{dataItem.tags | json}}</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;width:130px">Creation Date:</td>
+                    <td>{{dataItem.dateCreated | date:'shortDate'}}</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bold;width:130px">Updated Date:</td>
+                    <td>{{dataItem.dateUpdated | date:'shortDate'}}</td>
+                </tr>
+            </table>
+        </ng-template>
+
+    </kendo-grid>
+</div>

@@ -6,6 +6,8 @@ import { ExerciserComponent } from './main/exerciser/exerciser.component';
 import { SurveyComponent } from './main/survey/survey.component';
 import { JstreeComponent } from './main/jstree/jstree.component';
 import { SearchPageComponent } from './main/assessment-library/search-page/search-page.component';
+import { AssessLibKendoComponent } from './main/assessment-library-kendo/assessment-library-kendo.component';
+import { KendoTestComponent } from './main/kendo-test/kendo-test.component'
 
 const routes: Routes = [
   {
@@ -31,8 +33,15 @@ const routes: Routes = [
   {
     path: 'search-page',
     component: SearchPageComponent
+  },
+  {
+    path: 'kendo-test',
+    component: KendoTestComponent
+  },
+  {
+    path: 'assessment-library-kendo',
+    component: AssessLibKendoComponent
   }   
-
 ];
 
 @NgModule({

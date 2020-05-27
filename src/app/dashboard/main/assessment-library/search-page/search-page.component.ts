@@ -18,7 +18,7 @@ export class SearchPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.dataService.getassessment().subscribe(assessment => {
+    this.dataService.getassessment("../assets/data/assessment-library-kendo/assessment-library.json").subscribe(assessment => {
       this.Assessment = assessment
       this.dataService.assessmentData = assessment
     });

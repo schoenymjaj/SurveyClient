@@ -11,6 +11,8 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms'; //DUPed
 import { HttpClientModule } from '@angular/common/http';
 
 import {DemoMaterialModule} from './material-module';  //DUPed
+import { KendoUIModule } from './kendoui-module'
+
 //import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule, MatToolbarModule, MatSidenavModule, MatListModule } from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
 import { CirdsNavComponent } from './cirds-nav/cirds-nav.component';
@@ -21,7 +23,6 @@ import { AppInitService } from './services/app-init.service';
 
 import { IngestDialogComponent } from './dashboard/main/ingest-dialog/ingest-dialog.component';
 import { SynonymsDialogComponent } from './dashboard/main/synonyms-dialog/synonyms-dialog.component';
-
 
 export function initializeApp1(appInitService: AppInitService) {
   return (): Promise<any> => { 
@@ -44,6 +45,7 @@ export function initializeApp1(appInitService: AppInitService) {
     FormsModule,
     ReactiveFormsModule,
     DemoMaterialModule,
+    KendoUIModule,
     LayoutModule,
     HttpClientModule
   ],

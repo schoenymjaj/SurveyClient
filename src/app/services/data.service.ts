@@ -18,8 +18,8 @@ export class DataService {
   ) { }
 
 
-  getassessment(): Observable<Assessment[]>{
-    return this.http.get<Assessment[]>(this.postUrl);
+  getassessment(urlInput:string): Observable<Assessment[]>{
+    return this.http.get<Assessment[]>(urlInput);
     
   }
 
@@ -28,7 +28,7 @@ export class DataService {
         let filteredassessmentList = [];
         for (let Assessment of assessment) {
             for (let options of this.searchOption) {
-                if (options.title === Assessment.title) {
+                if (options.name === Assessment.name) {
                   filteredassessmentList.push(Assessment);
                 }
             }

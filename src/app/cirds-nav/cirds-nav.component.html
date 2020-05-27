@@ -42,8 +42,9 @@
                 
                 <button mat-button class="top-menu-choice" [matMenuTriggerFor]="afterMenu">Assessment</button>
                 <mat-menu #afterMenu="matMenu" xPosition="after">
-                  <button mat-menu-item (click)="viewAssessmentLibrary()">Library</button>
-                  <button mat-menu-item>Perform</button>
+                    <button mat-menu-item (click)="viewAssessmentLibrary()">Library</button>
+                    <button mat-menu-item (click)="viewKendoAssessmentLibrary()">Library (Grid)</button>
+                    <button mat-menu-item>Perform</button>
                 </mat-menu>
 
                 <mat-menu #appMenu="matMenu">

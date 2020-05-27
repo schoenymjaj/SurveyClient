@@ -1,77 +1,77 @@
 [
     {
         "id": 1,
-        "title": "RISC At-Risk Populations Vulnerability",
+        "name": "RISC At-Risk Populations Vulnerability",
         "category": "considerations",
         "type": "vulnerability",
         "tags": "at-risk, social vulnerability"
     },
     {
         "id": 2,
-        "title": "RISC Blood Bank Vulnerability",
+        "name": "RISC Blood Bank Vulnerability",
         "category": "blood bank",
         "type": "vulnerability",
         "tags": "blood, facility, direct patient care, brick and mortar"
     },
     {
         "id": 3,
-        "title": "RISC Coronavirus (COVID-19) Vulnerability",
+        "name": "RISC Coronavirus (COVID-19) Vulnerability",
         "category": "blood bank",
         "type": "vulnerability",
         "tags": "blood, facility, direct patient care, brick and mortar"
     },
     {
         "id": 4,
-        "title": "RISC Dialysis Center Vulnerability",
+        "name": "RISC Dialysis Center Vulnerability",
         "category": "dialysis center",
         "type": "vulnerability",
         "tags": "dialysis, facility, direct patient care, brick and mortar"
     },
     {
         "id": 5,
-        "title": "RISC Hospital Vulnerability Comprehensive",
+        "name": "RISC Hospital Vulnerability Comprehensive",
         "category": "hospital",
         "type": "vulnerability",
         "tags": "hospital, facility, direct patient care, brick and mortar, comprehensive"
     },
     {
         "id": 6,
-        "title": "RISC Vulnerability Lite (Ascension)",
+        "name": "RISC Vulnerability Lite (Ascension)",
         "category": "general",
         "type": "vulnerability",
         "tags": "hospital, facility, direct patient care, brick and mortar, lite"
     },
     {
         "id": 7,
-        "title": "RISC Long Term Care Vulnerability Lite",
+        "name": "RISC Long Term Care Vulnerability Lite",
         "category": "long term care",
         "type": "vulnerability",
         "tags": "hospital, facility, direct patient care, brick and mortar, lite"
     },
     {
         "id": 8,
-        "title": "RISC Public Health Vulnerability",
+        "name": "RISC Public Health Vulnerability",
         "category": "public health",
         "type": "vulnerability",
         "tags": "public health, government, jurisdiction"
     },
     {
         "id": 9,
-        "title": "RISC Mobile Vehicles Vulnerability",
+        "name": "RISC Mobile Vehicles Vulnerability",
         "category": "considerations",
         "type": "vulnerability",
         "tags": "public health, government, jurisdiction"
     },
     {
         "id": 10,
-        "title": "RISC Supply Chain Vulnerability",
+        "name": "RISC Supply Chain Vulnerability",
         "category": "considerations",
         "type": "vulnerability",
         "tags": "supply chain, dependencies"
     },
     {
         "id": 11,
-        "title": "RISC Logistics/Transportation Vulnerability",
+        "name": "RISC Logistics/Transportation Vulnerability",
         "category": "considerations",
         "type": "vulnerability",
         "tags": "at-risk, social vulnerability"
